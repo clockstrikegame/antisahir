@@ -23,7 +23,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: Make gradlew executable
-        run: chmod +x ./gradlew
+        run: |
+          curl -L https://services.gradle.org/distributions/gradle-8.4-bin.zip -o gradle.zip
+          unzip -q gradle.zip
+          mv gradle-8.4 gradle-dist
+          chmod +x ./gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug
