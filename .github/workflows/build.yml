@@ -19,18 +19,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Gradle
+      - name: Install Gradle
         uses: gradle/actions/setup-gradle@v3
-
-      - name: Make gradlew executable
-        run: |
-          curl -L https://services.gradle.org/distributions/gradle-8.4-bin.zip -o gradle.zip
-          unzip -q gradle.zip
-          mv gradle-8.4 gradle-dist
-          chmod +x ./gradlew
+        with:
+          gradle-version: '8.4'
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
