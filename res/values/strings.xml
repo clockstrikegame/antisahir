@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">FocusGuard</string>
-    <string name="accessibility_label">FocusGuard Protection</string>
-    <string name="accessibility_description">يحمي FocusGuard من الإيقاف خلال فترة الحجب النشطة</string>
-</resources>
